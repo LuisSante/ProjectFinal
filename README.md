@@ -6,6 +6,7 @@
  <p align="center">
     <img src="/img/sonar.png">
   </p>
+  
 ## Refacotoring Code
 
 ### Bad smells in code
