@@ -1,6 +1,6 @@
-projectKey=refactoring
+projectKey=FinalSoftEngineering
 serverUrl=http://localhost:9000
 serverVersion=9.1.0.47736
-dashboardUrl=http://localhost:9000/dashboard?id=refactoring
-ceTaskId=AX23lcLgaAzQiVDxdGCJ
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX23lcLgaAzQiVDxdGCJ
+dashboardUrl=http://localhost:9000/dashboard?id=FinalSoftEngineering
+ceTaskId=AX25jvNstYHdcRQoprP8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX25jvNstYHdcRQoprP8
