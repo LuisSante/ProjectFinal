@@ -1,5 +1,11 @@
 ﻿# ProjectFinal
-
+## Analisis SonarQube
+<p align="center">
+    <img src="/img/sonar.png">
+  </p>
+ <p align="center">
+    <img src="/img/sonar_.png">
+  </p>
 ## Refacotoring Code
 
 ### Bad smells in code
