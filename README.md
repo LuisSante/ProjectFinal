@@ -1,7 +1,7 @@
 ﻿# ProjectFinal
 ## Analisis SonarQube
 <p align="center">
-    <img src="/img/sonnar.png">
+    <img src="/img/sonnar_.png">
   </p>
  <p align="center">
     <img src="/img/sonar.png">
