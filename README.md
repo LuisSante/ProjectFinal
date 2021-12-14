@@ -116,3 +116,8 @@ const isCopied = (copyObj) => {
     .join('&');
 
 ```
+## Casos de prueba
+
+<p align="center">
+    <img src="/img/cp.jpeg">
+  </p>
