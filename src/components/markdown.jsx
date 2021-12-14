@@ -8,14 +8,17 @@ import { DEFAULT_DATA, DEFAULT_LINK, DEFAULT_PREFIX, DEFAULT_SOCIAL, DEFAULT_SUP
 const Title = (props) => {
   const { prefix, title } = props;
   if (prefix && title) {
+    let x= `${prefix} ${title}`;
     return (
       <>
-        {`<h1 align="center">${`${prefix} ${title}`}</h1>`}
+        {`<h1 align="center">${x}</h1>`}
         <br />
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 Title.propTypes = {

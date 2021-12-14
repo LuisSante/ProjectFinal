@@ -292,7 +292,7 @@ const Addons = (props) => {
         <div className="workflow">
           <div>
             download
-            <span id="blog-post-worklow-span" onClick={blogPostPorkflow} onKeyDown={(e) => e.keyCode === 13 && blogPostPorkflow()} role="button" tabIndex="0" style={{ cursor: 'pointer', color: '#002ead' }}>
+            <span id="blog-post-worklow-span" onClick={blogPostPorkflow} onKeyDown={(e) => e.key === 'Enter' && blogPostPorkflow()} role="button" tabIndex="0" style={{ cursor: 'pointer', color: '#002ead' }}>
               {' '}
               blog-post-workflow.yml
             </span>{' '}
