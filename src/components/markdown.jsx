@@ -37,7 +37,9 @@ const SubTitle = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return;
+  }
 };
 
 SubTitle.propTypes = {
@@ -54,7 +56,9 @@ const SectionTitle = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return;
+  }
 };
 
 SectionTitle.propTypes = {
@@ -90,7 +94,9 @@ const DisplayWork = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return;
+  }
 };
 
 DisplayWork.defaultProps = {
@@ -115,7 +121,9 @@ const DisplaySocial = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 DisplaySocial.propTypes = {
@@ -136,7 +144,9 @@ const VisitorsBadge = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 VisitorsBadge.defaultProps = {
@@ -169,7 +179,9 @@ const TwitterBadge = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 TwitterBadge.propTypes = {
@@ -190,7 +202,9 @@ const GithubProfileTrophy = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 GithubProfileTrophy.propTypes = {
@@ -212,7 +226,9 @@ const GitHubStats = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 GitHubStats.defaultProps = {
@@ -256,7 +272,7 @@ const DisplaySkills = (props) => {
   const { skills } = props;
   const listChosenSkills = [];
   SKILLS.forEach((skill) => {
-    if (skills[skill]) {
+  if (skills[skill]) {
       listChosenSkills.push(
         `
         <a href="${skillWebsites[skill]}" target="_blank" rel="noreferrer">
@@ -301,7 +317,9 @@ const DisplayDynamicBlogs = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 DisplayDynamicBlogs.defaultProps = {
@@ -338,7 +356,9 @@ const DisplayTopLanguages = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 DisplayTopLanguages.defaultProps = {
@@ -382,7 +402,9 @@ const DisplayStreakStats = (props) => {
       </>
     );
   }
-  return '';
+  else {
+    return ;
+  }
 };
 
 DisplayStreakStats.defaultProps = {
