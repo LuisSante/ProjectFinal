@@ -9,20 +9,19 @@ const githubStatsStylingQueryString = (options) => {
     ...(options.cacheSeconds && { cache_seconds: options.cacheSeconds }),
     ...(options.locale && { locale: options.locale }),
   };
-  const queryString = Object.entries(params)
+  return Object.entries(params)
     .map(([key, value]) => `${key}=${value}`)
     .join('&');
-  return queryString;
+  
 };
 
 const streakStatsStylingQueryString = (options) => {
   const params = {
     ...(options.theme && options.theme !== 'none' && { theme: options.theme }),
   };
-  const queryString = Object.entries(params)
+  return Object.entries(params)
     .map(([key, value]) => `${key}=${value}`)
     .join('&');
-  return queryString;
 };
 
 export const githubStatsLinkGenerator = ({ github, options }) => `https://github-readme-stats.vercel.app/api?username=${github}&${githubStatsStylingQueryString(options)}`;

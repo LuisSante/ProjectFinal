@@ -19,6 +19,32 @@ import './index.css';
 import { isGitHubUsernameValid, isMediumUsernameValid, isTwitterUsernameValid } from '../utils/validation';
 import { DEFAULT_PREFIX, DEFAULT_DATA, DEFAULT_LINK, DEFAULT_SOCIAL, DEFAULT_SUPPORT } from '../constants/defaults';
 
+
+// transform to function to avoid re-rendering -> {copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />}
+
+const isCopied = (copyObj) => {
+  return copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />;
+};
+
+// transform to function ->  {previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />}
+
+const isPreview = (previewMarkdown) => {
+  return previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />;
+};
+
+// transform to function -> {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
+
+const generatePreviewFx = () => {
+  return <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} />;
+};
+
+// transform to function -> {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
+
+const generateMarkdownFx = () => {
+  return <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} />;
+};
+
+
 const KeepCacheUpdated = ({ prefix, data, link, social, skills, support }) => {
   useEffect(() => {
     localStorage.setItem(
@@ -399,13 +425,14 @@ const IndexPage = () => {
             {social.twitter && !isTwitterUsernameValid(social.twitter) ? <div className="warning">* Twitter username is invalid, please add a valid username</div> : ''}
           </div>
           <div className="flex items-center justify-center w-full">
-            <div className="text-xs sm:text-xl font-medium border-2 border-solid border-gray-900 bg-gray-100 flex items-center justify-center py-1 sm:py-2 px-2 sm:px-4 generate" tabIndex="0" role="button" onClick={handleGenerate} onKeyDown={(e) => e.keyCode === 13 && handleGenerate()}>
+            <div className="text-xs sm:text-xl font-medium border-2 border-solid border-gray-900 bg-gray-100 flex items-center justify-center py-1 sm:py-2 px-2 sm:px-4 generate" tabIndex="0" role="button" onClick={handleGenerate} onKeyDown={(e) => e.key === 'Enter' && handleGenerate()}>
               Generate README
             </div>
           </div>
         </div>
 
         {displayLoader ? <Loader /> : ''}
+
 
         {generateMarkdown || generatePreview ? (
           <div className="markdown-section p-4 sm:py-4 sm:px-10">
@@ -416,7 +443,7 @@ const IndexPage = () => {
               </button>
 
               <button type="button" className="text-base w-1/6 border-2 border-solid border-gray-900 bg-gray-100 flex items-center justify-center p-1" id="copy-button" onClick={handleCopyToClipboard}>
-                {copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />}
+                {isCopied(copyObj)}
                 <span className="hidden sm:block" id="copy-markdown">
                   {copyObj.copiedText}
                 </span>
@@ -437,7 +464,7 @@ const IndexPage = () => {
               </button>
 
               <button type="button" className="text-base w-1/6 border-2 border-solid border-gray-900 bg-gray-100 flex items-center justify-center p-1" onClick={handleGeneratePreview}>
-                {previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />}
+                {isPreview(previewMarkdown)}
                 <span className="hidden sm:block ml-1" id="preview-markdown">
                   {previewMarkdown.buttonText}
                 </span>
@@ -446,8 +473,8 @@ const IndexPage = () => {
 
             <div className="w-full flex justify-center items-center">
               <div className="w-full text-sm text-gray-900 shadow-xl mt-2 p-4 bg-gray-100 border-2 border-solid border-gray-800" id="markdown-box">
-                {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
-                {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
+                {generatePreviewFx()}
+                {generateMarkdownFx()}
               </div>
             </div>
             <div className="mt-10" id="support">
