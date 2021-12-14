@@ -17,7 +17,7 @@ const Title = (props) => {
     );
   }
   else {
-    return ;
+    return '' ;
   }
 };
 
@@ -38,7 +38,7 @@ const SubTitle = (props) => {
     );
   }
   else {
-    return;
+    return '';
   }
 };
 
@@ -57,7 +57,7 @@ const SectionTitle = (props) => {
     );
   }
   else {
-    return;
+    return '';
   }
 };
 
@@ -95,7 +95,7 @@ const DisplayWork = (props) => {
     );
   }
   else {
-    return;
+    return '';
   }
 };
 
@@ -122,7 +122,7 @@ const DisplaySocial = (props) => {
     );
   }
   else {
-    return ;
+    return '';
   }
 };
 
@@ -145,7 +145,7 @@ const VisitorsBadge = (props) => {
     );
   }
   else {
-    return ;
+    return '' ;
   }
 };
 
@@ -180,7 +180,7 @@ const TwitterBadge = (props) => {
     );
   }
   else {
-    return ;
+    return '' ;
   }
 };
 
@@ -203,7 +203,7 @@ const GithubProfileTrophy = (props) => {
     );
   }
   else {
-    return ;
+    return '';
   }
 };
 
@@ -227,7 +227,7 @@ const GitHubStats = (props) => {
     );
   }
   else {
-    return ;
+    return '' ;
   }
 };
 
@@ -289,7 +289,7 @@ const DisplaySkills = (props) => {
       <br />
       <br />
     </>
-  ) : (null);
+  ) : ('');
 };
 
 DisplaySkills.defaultProps = {
@@ -316,7 +316,7 @@ const DisplayDynamicBlogs = (props) => {
     );
   }
   else {
-    return ;
+    return '';
   }
 };
 
@@ -355,7 +355,7 @@ const DisplayTopLanguages = (props) => {
     );
   }
   else {
-    return ;
+    return '';
   }
 };
 
@@ -401,7 +401,7 @@ const DisplayStreakStats = (props) => {
     );
   }
   else {
-    return ;
+    return '';
   }
 };
 
@@ -454,7 +454,7 @@ const DisplaySupport = (props) => {
       <br />
     </div>
   ) : (
-    null
+    ''
   );
 };
 

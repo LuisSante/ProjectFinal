@@ -19,32 +19,6 @@ import './index.css';
 import { isGitHubUsernameValid, isMediumUsernameValid, isTwitterUsernameValid } from '../utils/validation';
 import { DEFAULT_PREFIX, DEFAULT_DATA, DEFAULT_LINK, DEFAULT_SOCIAL, DEFAULT_SUPPORT } from '../constants/defaults';
 
-
-// transform to function to avoid re-rendering -> {copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />}
-
-const isCopied = (copyObj) => {
-  return copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />;
-};
-
-// transform to function ->  {previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />}
-
-const isPreview = (previewMarkdown) => {
-  return previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />;
-};
-
-// transform to function -> {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
-
-const generatePreviewFx = () => {
-  return <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} />;
-};
-
-// transform to function -> {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
-
-const generateMarkdownFx = () => {
-  return <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} />;
-};
-
-
 const KeepCacheUpdated = ({ prefix, data, link, social, skills, support }) => {
   useEffect(() => {
     localStorage.setItem(
@@ -402,6 +376,31 @@ const IndexPage = () => {
     }
   };
 
+/*
+  // transform to function to avoid re-rendering -> {copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />}
+
+const isCopied = (copyObj) => {
+  return copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />;
+};
+
+// transform to function ->  {previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />}
+
+const isPreview = (previewMarkdown) => {
+  return previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />;
+};
+
+// transform to function -> {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
+
+const generatePreviewFx = () => {
+  return <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} />;
+};
+
+// transform to function -> {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
+
+const generateMarkdownFx = () => {
+  return <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} />;
+};
+*/
   return (
     <Layout>
       <div className="m-4 sm:p-4">
@@ -443,7 +442,7 @@ const IndexPage = () => {
               </button>
 
               <button type="button" className="text-base w-1/6 border-2 border-solid border-gray-900 bg-gray-100 flex items-center justify-center p-1" id="copy-button" onClick={handleCopyToClipboard}>
-                {isCopied(copyObj)}
+              {copyObj.isCopied === true ? <CheckIcon size={24} /> : <CopyIcon size={24} />}
                 <span className="hidden sm:block" id="copy-markdown">
                   {copyObj.copiedText}
                 </span>
@@ -464,7 +463,7 @@ const IndexPage = () => {
               </button>
 
               <button type="button" className="text-base w-1/6 border-2 border-solid border-gray-900 bg-gray-100 flex items-center justify-center p-1" onClick={handleGeneratePreview}>
-                {isPreview(previewMarkdown)}
+              {previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />}
                 <span className="hidden sm:block ml-1" id="preview-markdown">
                   {previewMarkdown.buttonText}
                 </span>
@@ -473,8 +472,8 @@ const IndexPage = () => {
 
             <div className="w-full flex justify-center items-center">
               <div className="w-full text-sm text-gray-900 shadow-xl mt-2 p-4 bg-gray-100 border-2 border-solid border-gray-800" id="markdown-box">
-                {generatePreviewFx()}
-                {generateMarkdownFx()}
+              {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
+              {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} support={support} /> : ''}
               </div>
             </div>
             <div className="mt-10" id="support">
