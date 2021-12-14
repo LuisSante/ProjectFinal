@@ -1,10 +1,10 @@
 ﻿# ProjectFinal
 ## Analisis SonarQube
 <p align="center">
-    <img src="/img/sonar.png">
+    <img src="/img/sonnar.png">
   </p>
  <p align="center">
-    <img src="/img/sonnar_.png">
+    <img src="/img/sonar.png">
   </p>
 ## Refacotoring Code
 
