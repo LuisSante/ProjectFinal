@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import links from '../constants/page-links';
+import links from '../constants/links';
 import logo from '../images/mdg.png';
 import discord from '../images/Discord-Logo.png';
 

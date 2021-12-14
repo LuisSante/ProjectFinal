@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import axios from 'axios';
 import { Link } from 'gatsby';
 import { act } from 'react-dom/test-utils';
-import links from '../constants/page-links';
+import links from '../constants/links';
 import logo from '../images/mdg.png';
 
 const Header = (props) => {

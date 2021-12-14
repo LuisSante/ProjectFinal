@@ -289,9 +289,7 @@ const DisplaySkills = (props) => {
       <br />
       <br />
     </>
-  ) : (
-    ''
-  );
+  ) : (null);
 };
 
 DisplaySkills.defaultProps = {
@@ -456,7 +454,7 @@ const DisplaySupport = (props) => {
       <br />
     </div>
   ) : (
-    ''
+    null
   );
 };
 

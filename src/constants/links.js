@@ -5,3 +5,4 @@ const links = {
   support: '/support',
 };
 export default links;
+// page_links.js

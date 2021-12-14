@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 import { ToolsIcon, XCircleIcon } from '@primer/octicons-react';
 import latestBlogs from '../utils/workflows';
-import links from '../constants/page-links';
+import links from '../constants/links';
 import { isMediumUsernameValid, isGitHubUsernameValid } from '../utils/validation';
 
 const AddonsItem = (props) => {

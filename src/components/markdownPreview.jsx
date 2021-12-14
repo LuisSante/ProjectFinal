@@ -371,7 +371,7 @@ export const SkillsPreview = (props) => {
       {listSkills}
     </div>
   ) : (
-    ''
+    null
   );
 };
 SkillsPreview.propTypes = {
@@ -401,7 +401,7 @@ export const SupportPreview = (props) => {
       )}
     </div>
   ) : (
-    ''
+    null
   );
 };
 SupportPreview.propTypes = {
