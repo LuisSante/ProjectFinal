@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                sh 'git status',
-                sh 'git add .',
+                sh 'git status'
+                sh 'git add .'
                 sh 'git commit -m "Jenkinsfile"'
             }
         }
