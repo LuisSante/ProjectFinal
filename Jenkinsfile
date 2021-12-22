@@ -17,6 +17,8 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
+
+            agent any
                 
             environment {
                 def scannerHome = tool 'SonarScanner';
