@@ -1,4 +1,4 @@
-pipeline {
+node {
     agent any
     environment {
             CI = 'true'
@@ -18,14 +18,15 @@ pipeline {
 
         stage('SonarQube Analysis') {
             
-            environment{
-                def SCANNER = tool 'sonarqube'
-            }
+            def SCANNER = tool 'sonarqube';
 
-            steps {
-                withSonarQubeEnv('sonarqube'){
-                    sh "${SCANNER}/bin/sonar-scanner" 
-                }
+            withSonarQubeEnv('sonarqube'){
+                sh "${SCANNER}/bin/sonar-scanner \
+                    -Dsonar.projectKey=ISFinal \
+                    -Dsonar.sources=src/ \
+                    -Dsonar.host.url=http://localhost:9000 \
+                    -sonar.exclusions=node_modules/, .git/, .gitignore, public/, _mocks/*, src/components/, src/components/_tests_/, src/styles/ \
+                    -Dsonar.login=9ffe0aa5b47596cd83f87c38835fe25a23c833ba"
             }
 
         }
