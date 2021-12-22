@@ -19,7 +19,7 @@ pipeline {
         stage('SonarQube Analysis') {
             
             environment{
-                def SCANNER_HOME = tool 'SonarQubeScanner';
+                SCANNER_HOME = tool 'SonarQube';
                 PROJECT_NAME = "ISFinal"
             }
 
