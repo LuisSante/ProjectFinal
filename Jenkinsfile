@@ -21,13 +21,13 @@ pipeline {
             agent any
                 
             environment {
-                def scannerHome = tool 'SonarScanner';
+                def SCANNEER = tool 'SonarScanner';
             }
                 
             steps {
 
                 withSonarQubeEnv('SonarQubeServer') {
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${SCANNEER}/bin/sonar-scanner"
                 }
 
             }
