@@ -18,7 +18,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
 
-            def SCANNER = tool name: 'SonarQubeScanner'
+            def SCANNER = tool 'SonarQube Scanner'
 
             withSonarQubeEnv('sonar-6'){
                 sh "${SCANNER}/bin/sonar-scanner" 
