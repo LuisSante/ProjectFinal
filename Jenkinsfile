@@ -8,7 +8,13 @@ pipeline {
             steps {
                 sh 'git status'
                 sh 'git add .'
-                sh 'git commit -m "Jenkinsfile"'
+
+                try {
+                    sh 'git commit -m "Jenkinsfile"'
+                }
+                catch {
+                    sh 'echo rama actualizada'
+                }
             }
         }
         stage('Install') {
