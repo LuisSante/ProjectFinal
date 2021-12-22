@@ -18,8 +18,10 @@ pipeline {
 
         stage('SonarQube Analysis') {
             
-            def SCANNER = tool 'sonarqube';
-
+            environment{
+                def SCANNER = tool 'sonarqube';
+            }
+            
             withSonarQubeEnv('sonarqube'){
                 sh "${SCANNER}/bin/sonar-scanner \
                     -Dsonar.projectKey=ISFinal \
