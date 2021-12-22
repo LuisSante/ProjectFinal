@@ -4,14 +4,21 @@ pipeline {
             CI = 'true'
         }
     stages {
+        stage('Git Checkout') {
+            steps {
+                sh 'git status',
+                sh 'git add .',
+                sh 'git commit -m "Jenkinsfile"'
+            }
+        }
         stage('Install') {
             steps {
                 sh 'yarn install'
             }
         }
-        stage('Start') {
-            steps{
-                sh 'yarn start'
+        stage('Test') {
+            steps {
+                sh 'yarn test'
             }
         }
     }
