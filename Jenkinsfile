@@ -17,20 +17,15 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-
-            agent any
-                
-            environment {
-                def SCANNEER = tool 'SonarQube Scanner';
-            }
-                
+            
             steps {
-
-                withSonarQubeEnv('SonarQubeServer') {
-                    sh "${SCANNEER}/bin/sonar-scanner"
-                }
-
+                scannerHome = tool 'SonarQubeScanner'
             }
+
+            withSonarQubeEnv('SonarQubeServer'){
+                sh "${scannerHome}/bin/sonar-scanner" 
+            }
+
         }
 
         stage('Build') {
