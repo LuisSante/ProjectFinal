@@ -21,7 +21,7 @@ pipeline {
             agent any
                 
             environment {
-                def SCANNEER = tool 'SonarScanner';
+                def SCANNEER = tool 'SonarQubeScanner';
             }
                 
             steps {
