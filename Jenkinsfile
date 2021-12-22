@@ -18,10 +18,19 @@ pipeline {
 
         stage('SonarQube Analysis') {
             
-            def scannerHome = tool 'SonarQubeScanner';
-            
-            withSonarQubeEnv('SonarQubeServer') {
-                sh "${scannerHome}/bin/sonar-scanner"
+            SCANNER_HOME = tool 'SonarQubeScanner';
+            PROJECT_NAME = "ISFinal"
+
+            steps {
+                withSonarQubeEnv('SonarQubeServer') {
+                    sh '''$SCANNER_HOME/bin/sonar-scanner \
+                            -Dsonar.projectKey=$PROJECT_NAME \
+                            -Dsonar.sources=src/ \
+                            -Dsonar.host.url=http://localhost:9000 \
+                            -sonar.exclusions=node_modules/*, .git/*, .gitignore, public/*, __mocks__/*, src/components/__tests__/*, src/styles/* \
+                            -Dsonar.login=9ffe0aa5b47596cd83f87c38835fe25a23c833ba''' 
+                }
+                
             }
         }
 
