@@ -19,11 +19,11 @@ pipeline {
         stage('SonarQube Analysis') {
             
             environment{
-                def SCANNER = tool 'SonarQube Scanner'
+                def SCANNER = tool 'sonarqube'
             }
 
             steps {
-                withSonarQubeEnv('sonar-6'){
+                withSonarQubeEnv('sonarqube'){
                     sh "${SCANNER}/bin/sonar-scanner" 
                 }
             }
