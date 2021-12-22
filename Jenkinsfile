@@ -17,20 +17,18 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            
-            checkout scm
 
-            steps {
-
-                script {
-                    scannerHome = tool 'SonarQubeScanner'
-                }
-
-                withSonarQubeEnv('SonarQubeServer'){
-                    sh "${scannerHome}/bin/sonar-scanner" 
-                }
+            tools {
+                sonarQube 'SonarQubeScanner'
             }
 
+            steps{
+
+                withSonarQubeEnv('SonarQubeServer'){
+                    sh 'sonar-scanner'
+                }
+
+            }
         }
 
         stage('Build') {
