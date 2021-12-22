@@ -16,8 +16,8 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            
+        node{
+    
             stage('CSM'){
                 checkout scm 
             }
