@@ -8,13 +8,6 @@ pipeline {
             steps {
                 sh 'git status'
                 sh 'git add .'
-
-                try {
-                    sh 'git commit -m "Jenkinsfile"'
-                }
-                catch {
-                    sh 'echo rama actualizada'
-                }
             }
         }
         stage('Install') {
@@ -25,6 +18,11 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'yarn test'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'yarn build'
             }
         }
     }
