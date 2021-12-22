@@ -18,8 +18,10 @@ pipeline {
 
         stage('SonarQube Analysis') {
             
-            SCANNER_HOME = tool 'SonarQubeScanner';
-            PROJECT_NAME = "ISFinal"
+            environment{
+                SCANNER_HOME = tool 'SonarQubeScanner';
+                PROJECT_NAME = "ISFinal"
+            }
 
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
