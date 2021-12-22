@@ -18,13 +18,15 @@ pipeline {
 
         stage('SonarQube Analysis') {
             
+            checkout scm
+
             steps {
 
                 script {
                     scannerHome = tool 'SonarQubeScanner'
                 }
 
-                withSonarQubeEnv('SonarQubeScanner'){
+                withSonarQubeEnv('SonarQubeServer'){
                     sh "${scannerHome}/bin/sonar-scanner" 
                 }
             }
