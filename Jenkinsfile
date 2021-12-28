@@ -18,14 +18,13 @@ pipeline {
 
         stage('SonarQube Analysis') {
 
+            environment{
+                def SCANNER = tool name: 'SonarQube Scanner', home: '~/.sonarqube/sonar-scanner-3.3.0.1492/bin/sonar-scanner';
+            }
+
             steps {
                 withSonarQubeEnv(installationName: 'sq1' ){
-                    sh "sonarqube/bin/sonar-scanner \
-                        -Dsonar.projectKey=ISFinal \
-                        -Dsonar.sources=src/ \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -sonar.exclusions=node_modules/, .git/, .gitignore, public/, mocks/*, src/components/, src/components/_tests/, src/styles/ \
-                        -Dsonar.login=9ffe0aa5b47596cd83f87c38835fe25a23c833ba"
+                    sh "${SCANNER}/bin/sonar-scanner"
                 }
             }
         }
