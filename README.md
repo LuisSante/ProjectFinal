@@ -129,3 +129,7 @@ Para las pruebas de seguridad, se ataco desde OWASP ZAP obteniendo asi las sigui
     <img src="/img/owaspAl.png">
     <img src="/img/owasp.png">  
   </p>
+## Gestión de Issues
+<p align="center">
+    <img src="/img/trello.png">  
+  </p>
