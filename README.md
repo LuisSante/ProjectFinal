@@ -129,7 +129,9 @@ Para las pruebas de seguridad, se ataco desde OWASP ZAP obteniendo asi las sigui
     <img src="/img/owaspAl.png">
     <img src="/img/owasp.png">  
   </p>
+  
 ## Gestión de Issues
+Para la gestión de issues se uso la herramienta Trello debido a que todos los integrantes ya habian usado esta herramienta en anteriores proyectos.
 <p align="center">
     <img src="/img/trello.png">  
   </p>
