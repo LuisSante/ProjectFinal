@@ -17,10 +17,6 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            
-            environment{
-                def SCANNER = tool 'sonarqube';
-            }
 
             steps {
                 withSonarQubeEnv(installationName: 'sq1' ){
