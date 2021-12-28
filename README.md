@@ -121,3 +121,11 @@ const isCopied = (copyObj) => {
 <p align="center">
     <img src="/img/cp.jpeg">
   </p>
+  
+## Pruebas de Seguridad
+Para las pruebas de seguridad, se ataco desde OWASP ZAP obteniendo asi las siguientes alertas:
+<p align="center">
+    <img src="/img/owaspAl1.png">  
+    <img src="/img/owaspAl.png">
+    <img src="/img/owasp.png">  
+  </p>
