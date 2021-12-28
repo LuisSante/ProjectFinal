@@ -24,7 +24,7 @@ pipeline {
 
             steps {
                 withSonarQubeEnv('sonarqube'){
-                    sh "$SCANNER/bin/sonarqube \
+                    sh "{$SCANNER}/bin/sonarqube \
                         -Dsonar.projectKey=ISFinal \
                         -Dsonar.sources=src/ \
                         -Dsonar.host.url=http://localhost:9000 \
