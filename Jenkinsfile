@@ -16,20 +16,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-
-            steps {
-                withSonarQubeEnv('sonarqube'){
-                    sh "sonarqube/bin/sonar-scanner \
-                        -Dsonar.projectKey=ISFinal \
-                        -Dsonar.sources=src/ \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -sonar.exclusions=node_modules/, .git/, .gitignore, public/, _mocks/*, src/components/, src/components/_tests_/, src/styles/ \
-                        -Dsonar.login=9ffe0aa5b47596cd83f87c38835fe25a23c833ba"
-                }
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'yarn build'
