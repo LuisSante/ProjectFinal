@@ -10,12 +10,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'yarn test'
-            }
-        }
-
         stage('SonarQube Analysis') {
 
             environment{
@@ -26,6 +20,12 @@ pipeline {
                 withSonarQubeEnv(installationName: 'sq1' ){
                     sh "${SCANNER}/bin/sonar-scanner"
                 }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'yarn test'
             }
         }
 
