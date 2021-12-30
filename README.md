@@ -342,14 +342,8 @@ pipeline {
 ```
 
 ## Ejecución 
-SonnarQube:
-Una vez ejecutado SonarQube obtuvimos los siguientes resultados:
-<p align="center">
-    <img src="/img/sonnar_.png">
-  </p>
- <p align="center">
-    <img src="/img/sonar.png">
-  </p>
+SonarQube:
+![Config](img/sonar_results.png)
 
 Jenkins:
 ![Config](img/exejenkins.png)
