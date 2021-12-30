@@ -34,6 +34,20 @@ pipeline {
                 sh 'yarn build'
             }
         }
+
+        stage('JMETER - Build') {
+            steps {
+                sh """
+                   date
+                   echo Starting the Performance Test 
+                   """
+                
+                sh """ 
+                   cd /media/luismoroco/D/Clases/3ERO/IS/apache-jmeter-5.4.1/bin/
+                   sh jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t /media/luismoroco/D/Portafolio/ProjectFinal/JmeterJenkinsTest.jmx -l /home/luismoroco/Escritorio/TestJenkinsJmeter.jtl
+                   """
+            }
+        }
         
         stage('Git Checkout') {
             steps {
