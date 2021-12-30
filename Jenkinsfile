@@ -47,7 +47,7 @@ pipeline {
                    sh jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t /media/luismoroco/D/Portafolio/ProjectFinal/JmeterJenkinsTest.jmx -l /home/luismoroco/Escritorio/TestJenkinsJmeter.jtl
                    """
             
-                perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: '/home/luismoroco/Escritorio/TestJenkinsJmeter.jtl' , past this code in pipeline
+                perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: '/home/luismoroco/Escritorio/TestJenkinsJmeter.jtl'
             }
         }
         
