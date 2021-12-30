@@ -153,6 +153,20 @@ const isCopied = (copyObj) => {
     <img src="/img/cp.jpeg">
   </p>
   
+# Construccion Automatica
+***
+Como estamos trabajando con NodeJS y React, podemos usar el comando “npm”, veremos algunos comandos. Si ponemos “npm --help”, y nos saldrá los comandos que pertenece a NodeJS.
+<p align="center">
+    <img src="/img/ca.png">
+  </p>
+Pero ¿Cómo esto interviene y ayuda en la construcción automática?:
+
+
+* [npm init] : Este comando sirve para crear el archivo package.json.
+* [npm install] : Leer el archivo del package.json para instalar todas las dependencias que encuentre.
+* [npm install <package>] : Descarga el paquete y lo mete en la carpeta node modules.
+* [npm test]: Esto ejecuta el script de "test" de un paquete, si se proporcionó uno. 
+
 ## Pruebas de Seguridad
 Para las pruebas de seguridad, se ataco desde OWASP ZAP obteniendo asi las siguientes alertas:
 <p align="center">
