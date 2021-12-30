@@ -27,24 +27,58 @@ GitHub Profile README Generator es un programa con código libre,diseñado por r
  - React
  - NodeJS
  - Jest
-  
-# Construccion Automatica
-Como estamos trabajando con NodeJS y React, podemos usar el comando “npm”, veremos algunos comandos. Si ponemos “npm --help”, y nos saldrá los comandos que pertenece a NodeJS.
-<p align="center">
-    <img src="/img/ca.png">
-  </p>
-Pero ¿Cómo esto interviene y ayuda en la construcción automática?:
-
-
-* [npm init] : Este comando sirve para crear el archivo package.json.
-* [npm install] : Leer el archivo del package.json para instalar todas las dependencias que encuentre.
-* [npm install <package>] : Descarga el paquete y lo mete en la carpeta node modules.
-* [npm test]: Esto ejecuta el script de "test" de un paquete, si se proporcionó uno. 
  
-# Analisis Estatico
-Para esta sección se hizo uso de Sonnar Scaner y SonarQube obteniendo los siguientes resultados:
+ # Incicializando el proyecto
+
+## Requisitos
+
+- Dirección del proyecto
+- Rama del Proyecto Local
+- Jenkins File (Pipeline)
+
+Con esto cargaremos el proyecto en el Jenkins para que pueda ser administrado.
+
+![Inicio](img/jenkins_initi.png) 
+![Config](img/jenkis_configu.png) 
+
+## Ya podemos trabajar con Jenkins!
+# 1. Construcción Automática
+
+Para este proyecto, se utilizará un pipeline de Jenkins que se encargará de la construcción automática.
+NodeJS falla en la construcción automática, por lo que se debe utilizar una versión de NodeJS más reciente y usar los siguientes comandos:
+
+- Para la instalación de dependencias, se usará `npm install`
+- Para la construcción, se usará `npm build`
  
-## Analisis SonarQube
+ 
+# 2. Análisis Estático 
+
+## Requisitos
+
+- SonarQube official Plugin 
+- SonarScanner Plugin 
+- SOnar Qube Server
+- sonar-project.properties
+
+Debemos iniciar un proyecto en SonarQube, para poder realizar el análisis estático.
+![Config](img/init_sonar.png) 
+
+Sonar arrojará scripts de configuración y permisos.
+![Config](img/sonarpropertiess.png) 
+
+Debemos Generar un Token:
+![Config](img/sonartoken.png) 
+
+Configuramos el servidor de Jenkins: 
+![Config](img/sonarserverconfig.png)
+
+Luego el scanner:
+![Config](img/sonarscannerconfig.png)
+
+Estamos listos para usar el plugin de SonarQube para el análisis estático! 
+
+ 
+Una vez ejecutado SonarQube obtuvimos los siguientes resultados:
 <p align="center">
     <img src="/img/sonnar_.png">
   </p>
@@ -167,26 +201,172 @@ const isCopied = (copyObj) => {
     <img src="/img/cp.jpeg">
   </p>
   
-# Pruebas Unitarias
+# 3. Pruebas Unitarias 
 
-# Pruebas Funcionales
+# 4. Pruebas Funcionales 
 
-# Pruebas de Seguridad
-Para las pruebas de seguridad, se ataco desde OWASP ZAP obteniendo asi las siguientes alertas:
+# 5. Pruebas de Seguridad 
+
+## Requisitos
+
+- Custom tool configuration
+- OWASP ZAP Plugin
+- URL: https://localhost:6000/
+
+Usamos Custom Tool para configurar el plugin de OWASP ZAP:
+![Config](img/owas1.png)
+
+Dentro del proyecto se debe configurar el puerto:
+![Config](img/owas2.png)
+
+Variables de entorno y configurar la sessión de OWASP ZAP:
+![Config](img/owas3.png)
+
+El modo de ataque:
+![Config](img/owas4.png)
+
+Gneramos un documento de salida con los resultados:
+![Config](img/owas5.png)
+
+Estamos listos para usar OWASP ZAP en Jenkins!
+
+Además de ello, se ataco desde OWASP ZAP obteniendo asi las siguientes alertas:
 <p align="center">
     <img src="/img/owaspAl1.png">  
     <img src="/img/owaspAl.png">
     <img src="/img/owasp.png">  
   </p>
 
-# Puebas de Performance
-Para esta sección usamos la herramienta JMeter. JMeter es un proyecto de Apache que puede ser utilizado como una herramienta de prueba de carga para analizar y medir el rendimiento de una variedad de servicios, con énfasis en aplicaciones web. con ella analizamos el performance del proyecto obteniendo los siguientes resultados:
-<p align="center">
-    <img src="/img/per.jpg">
-  </p>
+
+# 6. Pruebas de Performance
+
+## Requisitos
+
+- Jmeter
+- Consola 
+- Paths (JMeter, Proyecto, Output y URL)
+
+Usamos BlazeMeter para configurar las pruebas de performance, al finalizar se genera un documento de salida `output.jmx`, que será
+cargado al proyecto y será leído por JMeter. 
+
+Iniciamos el proyecto en JMeter y verificamos que funcione:
+![Config](img/jmeterinit.png)
+
+
+Configuramos los documentos de salida:
+![Config](img/output_file_config.png)
+
+
+Usaremos la consola de Linux para acceder al PATH de JMeter, el proyecto y la ruta de salida: 
+
+1. PATH JMeter:  `cd /media/<PC>/D/Clases/3ERO/IS/apache-jmeter-5.4.1/bin/`
+2. Formato de salida: `-Jjmeter.save.saveservice.output_format=xml`
+3. Repositorio: `/media/<PC>/D/Portafolio/ProjectFinal/JmeterJenkinsTest.jmx`
+4. Ruta de salida: `/home/<PC>/Escritorio/TestJenkinsJmeter.jtl`
+
+Debemos ejecutar los script en simultaneo, para una correcta ejecución:
+Con esto podemos usar JMeter desde la consola de Jenkins!
 
 # Gestión de Issues
 Para la gestión de issues se uso la herramienta Trello debido a que todos los integrantes ya habian usado esta herramienta en anteriores proyectos.
 <p align="center">
     <img src="/img/trello.png">  
   </p>
+
+# Construcción del Pipeline
+
+## Requisitos 
+
+- Convert to pipeline 
+- Jenkinsfile
+- Blue Ocean Plugin
+- PerfReport
+
+## Nota
+
+Al iniciar un proyecto tipo pipeline, nuestras herramientas predefinidas son limitadas, así que construimos 
+partes del proyecto por componentes usando proyectos `freestyle` y los convertimos a pipeline usando `Convert to pipeline`
+
+Desde este punto, ya podemos trabajar con Jenkins!
+Solo hace falta llamas a cada herramienta, plugin y variables definidas.
+
+## Pipeline 
+
+```yaml
+pipeline {
+    agent any
+    environment {
+            CI = 'true'
+        }
+    stages {
+        stage('Install') {
+            steps {
+                sh 'yarn install'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'yarn build'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+
+            environment{
+                def SCANNER = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
+            }
+
+            steps {
+                withSonarQubeEnv(installationName: 'sq1' ){
+                    sh "${SCANNER}/bin/sonar-scanner"
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'yarn test'
+            }
+        }
+
+        stage('JMETER - Build') {
+            steps {
+                sh """
+                   date
+                   echo Starting the Performance Test 
+                   """
+                
+                sh """ 
+                   cd /media/luismoroco/D/Clases/3ERO/IS/apache-jmeter-5.4.1/bin/
+                   sh jmeter.sh -Jjmeter.save.saveservice.output_format=csv -n -t /media/luismoroco/D/Portafolio/ProjectFinal/JmeterJenkinsTest.jmx -l /home/luismoroco/Escritorio/TestJenkinsJmeter.csv
+                   """
+                
+                perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: '/home/luismoroco/Escritorio/TestJenkinsJmeter.csv'
+            }
+        }
+        
+        stage('Git Checkout') {
+            steps {
+                sh 'git status'
+                sh 'git add .'
+            }
+        }
+    }
+}
+```
+
+## Ejecución 
+
+Jenkins:
+![Config](img/exejenkins.png)
+
+Blue Ocean:
+![Config](img/blueocean.png)
+
+JMeter:
+![Config](img/jmeteeer.png)
+
+
+
+# Happy Hacking!
