@@ -9,6 +9,12 @@ pipeline {
                 sh 'yarn install'
             }
         }
+        
+        stage('Build') {
+            steps {
+                sh 'yarn build'
+            }
+        }
 
         stage('SonarQube Analysis') {
 
@@ -26,12 +32,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'yarn test'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'yarn build'
             }
         }
 
