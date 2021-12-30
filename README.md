@@ -78,13 +78,6 @@ Luego el scanner:
 Estamos listos para usar el plugin de SonarQube para el análisis estático! 
 
  
-Una vez ejecutado SonarQube obtuvimos los siguientes resultados:
-<p align="center">
-    <img src="/img/sonnar_.png">
-  </p>
- <p align="center">
-    <img src="/img/sonar.png">
-  </p>
   
 ## Refacotoring Code
 
@@ -349,6 +342,14 @@ pipeline {
 ```
 
 ## Ejecución 
+SonnarQube:
+Una vez ejecutado SonarQube obtuvimos los siguientes resultados:
+<p align="center">
+    <img src="/img/sonnar_.png">
+  </p>
+ <p align="center">
+    <img src="/img/sonar.png">
+  </p>
 
 Jenkins:
 ![Config](img/exejenkins.png)
