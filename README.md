@@ -202,10 +202,9 @@ const isCopied = (copyObj) => {
   </p>
   
 # 3. Pruebas Unitarias 
+En las pruebas unitarias se verifica si algunas partes del código funcionan correctamente, con estos test validamos el comportamiento de un objeto y lógica.
 
-# 4. Pruebas Funcionales 
-
-# 5. Pruebas de Seguridad 
+# 4. Pruebas de Seguridad 
 
 ## Requisitos
 
@@ -230,15 +229,8 @@ Gneramos un documento de salida con los resultados:
 
 Estamos listos para usar OWASP ZAP en Jenkins!
 
-Además de ello, se ataco desde OWASP ZAP obteniendo asi las siguientes alertas:
-<p align="center">
-    <img src="/img/owaspAl1.png">  
-    <img src="/img/owaspAl.png">
-    <img src="/img/owasp.png">  
-  </p>
 
-
-# 6. Pruebas de Performance
+# 5. Pruebas de Performance
 
 ## Requisitos
 
@@ -367,6 +359,10 @@ Blue Ocean:
 JMeter:
 ![Config](img/jmeteeer.png)
 
-
-
+OWASP: 
+<p align="center">
+    <img src="/img/owaspAl1.png">  
+    <img src="/img/owaspAl.png">
+    <img src="/img/owasp.png">  
+  </p>
 # Happy Hacking!
