@@ -196,6 +196,9 @@ const isCopied = (copyObj) => {
   
 # 3. Pruebas Unitarias 
 En las pruebas unitarias se verifica si algunas partes del código funcionan correctamente, con estos test validamos el comportamiento de un objeto y lógica.
+![Config](img/p1.png)
+![Config](img/p2.png)
+![Config](img/p3.png)
 
 # 4. Pruebas de Seguridad 
 
@@ -360,5 +363,9 @@ OWASP:
     <img src="/img/owaspAl.png">
     <img src="/img/owasp.png">  
   </p>
-  
+
+Pruebas:
+
+![Config](img/pruebasfuncionales.png)
+
 # Happy Hacking!
