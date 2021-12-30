@@ -196,9 +196,9 @@ const isCopied = (copyObj) => {
   
 # 3. Pruebas Unitarias 
 En las pruebas unitarias se verifica si algunas partes del código funcionan correctamente, con estos test validamos el comportamiento de un objeto y lógica.
-![Config](img/p1.png)
-![Config](img/p2.png)
-![Config](img/p3.png)
+![Config](img/p1.jpeg)
+![Config](img/p2.jpeg)
+![Config](img/p3.jpeg)
 
 # 4. Pruebas de Seguridad 
 
