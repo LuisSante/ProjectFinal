@@ -1,4 +1,35 @@
-﻿# ProjectFinal
+﻿# Proyecto Final
+ ## Curso: Ingeniería de Software
+ # Integrantes
+ - LUIS FELIPE SANTE TAIPE
+ - LUIS ANGEL MOROCO RAMOS
+ - MARYORI LIZETH HILARES ANGELO
+ - CKAROLL DARLENE CHURA NAVARRO
+ - EDUARDO FELIPE VALDIVIA QUISPE
+# GitHub Profile README Generator
+ <p align="center">
+    <img src="/img/github.gif">
+  </p>
+
+GitHub Profile README Generator es un programa que proporciona una manera fácil de crear un archivo Léame de perfil de GitHub con los últimos complementos, como el recuento de visitantes, las estadísticas de github, etc. Lo único que debemos hacer es completar los detalles como Nombre, Lema, Nombre de usuario de las plataformas de desarrollo, Trabajo actual, Portafolio, Blog, etc. con una interfaz de usuario mínima.
+
+GitHub Profile README Generator es un programa con código libre,diseñado por rahuldkjain.Usa lenguaje JavaScript y CSS para la interfaz.
+# Herramientas
+ - GitHub: Usamos este tipo de herramienta para crear un repositorio donde alojar nuestro proyecto.
+ - JMeter
+ - Trello
+ - SonarQube: Es una plataforma para evaluar código fuente. Es software libre y usa diversas herramientas de análisis estático de código fuente como Checkstyle, PMD o FindBugs para obtener métricas que pueden ayudar a mejorar la calidad del código de un programa.​
+ - Sonar-scanner
+ - Json
+ - JUnit: Es un conjunto de bibliotecas son utilizadas en programación para hacer pruebas unitarias de aplicaciones Java.JUnit es el estándar de facto para las pruebas unitarias de una aplicación Java. Aunque, es popular para las pruebas unitarias, tiene soporte completo y provisión para pruebas de instrumentación también.
+ - OWASP ZAP
+ - Selenium: Es un entorno de pruebas de software para aplicaciones basadas en la web. Selenium provee una herramienta de grabar/reproducir para crear pruebas sin usar un lenguaje de scripting para pruebas.
+ - React
+ - NodeJS
+ - Jest
+ 
+# Analisis Estatico
+
 ## Analisis SonarQube
 <p align="center">
     <img src="/img/sonnar_.png">
