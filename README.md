@@ -255,7 +255,7 @@ Con esto podemos usar JMeter desde la consola de Jenkins!
 # Gestión de Issues
 Para la gestión de issues se uso la herramienta Trello debido a que todos los integrantes ya habian usado esta herramienta en anteriores proyectos.
 <p align="center">
-    <img src="/img/trello.png">  
+    <img src="/img/trello1.png">  
   </p>
 
 # Construcción del Pipeline
